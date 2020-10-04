@@ -1,0 +1,8 @@
+class Solution:
+    def findPairs(self, nums: List[int], k: int) -> int:
+        c = Counter(nums)
+        if k>0:
+            res = sum([i+k in c for i in c])
+        else:
+            res = sum([c[i]>1 for i in c])
+        return res
