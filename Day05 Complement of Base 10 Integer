@@ -1,0 +1,11 @@
+class Solution:
+    def bitwiseComplement(self, N: int) -> int:
+        res = str(bin(N))[2:]
+        a = []
+        for i in res:
+            if i == "0":
+                a.append("1")
+            else:
+                a.append("0")
+        
+        return int("".join(a), 2)
