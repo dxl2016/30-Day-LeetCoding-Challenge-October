@@ -1,0 +1,22 @@
+class RecentCounter:
+
+    def __init__(self):
+        self.res = []
+        self.pointer = 0
+
+    def ping(self, t: int) -> int:
+        self.res.append(t)
+        
+        while(True):
+            if self.res[self.pointer] + 3000 < t:
+                self.pointer += 1
+            else:
+                break
+        
+        return len(self.res)-self.pointer
+
+
+# Your RecentCounter object will be instantiated and called as such:
+# obj = RecentCounter()
+# param_1 = obj.ping(t)
+
